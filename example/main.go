@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/btlike/spider"
+	"github.com/btsay/spider"
 	_ "net/http/pprof"
 )
 

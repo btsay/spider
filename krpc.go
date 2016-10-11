@@ -2,10 +2,11 @@ package spider
 
 import (
 	"bytes"
-	"github.com/zeebo/bencode"
 	"math"
 	"net"
 	"sync/atomic"
+
+	"github.com/zeebo/bencode"
 )
 
 type action func(arg map[string]interface{}, raddr *net.UDPAddr)
@@ -111,8 +112,8 @@ func (krpc *KRPC) Response(msg *KRPCMessage) {
 	}
 }
 
-//AnnounceData define data to storage
-type AnnounceData struct {
+//Infohash define data to storage
+type Infohash struct {
 	Infohash       string
 	IP             net.IP
 	Port           int

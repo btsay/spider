@@ -32,3 +32,9 @@ func (dht *DhtNode) Run() {
 	go func() { dht.NodeFinder() }()
 	logger(fmt.Sprintf("爬虫节点开始运行,最大处理速度每秒:%d,监听地址:%s", RateLimit, dht.network.Conn.LocalAddr().String()))
 }
+
+//RunDhtNode Run dht Node
+func RunDhtNode(id *ID, outHashIDChan chan AnnounceData, address string) {
+	dntNode := NewDhtNode(id, outHashIDChan, address)
+	dntNode.Run()
+}

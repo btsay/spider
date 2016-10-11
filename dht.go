@@ -10,11 +10,11 @@ type DhtNode struct {
 	table   *KTable
 	network *Network
 	krpc    *KRPC
-	outChan chan AnnounceData
+	outChan chan Infohash
 }
 
 //NewDhtNode create node
-func NewDhtNode(id *ID, outHashIDChan chan AnnounceData, address string) *DhtNode {
+func NewDhtNode(id *ID, outHashIDChan chan Infohash, address string) *DhtNode {
 	node := new(KNode)
 	node.ID = *id
 	dht := new(DhtNode)
@@ -34,7 +34,7 @@ func (dht *DhtNode) Run() {
 }
 
 //RunDhtNode Run dht Node
-func RunDhtNode(id *ID, outHashIDChan chan AnnounceData, address string) {
+func RunDhtNode(id *ID, outHashIDChan chan Infohash, address string) {
 	dntNode := NewDhtNode(id, outHashIDChan, address)
 	dntNode.Run()
 }

@@ -3,12 +3,13 @@ package main
 import (
 	"fmt"
 
-	"github.com/btsay/spider"
 	_ "net/http/pprof"
+
+	"github.com/btsay/spider"
 )
 
 var (
-	hashChan         = make(chan spider.AnnounceData, 100)
+	hashChan         = make(chan spider.Infohash, 100)
 	nodeNumber int64 = 10
 )
 

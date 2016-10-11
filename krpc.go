@@ -141,7 +141,7 @@ func (krpc *KRPC) Query(msg *KRPCMessage) {
 					return
 				}
 
-				result := AnnounceData{}
+				result := Infohash{}
 				result.Infohash = ID(infohash).String()
 				result.IP = msg.Addr.IP
 				krpc.Dht.outChan <- result
@@ -175,7 +175,7 @@ func (krpc *KRPC) Query(msg *KRPCMessage) {
 				}
 
 				countAnnounce++
-				result := AnnounceData{}
+				result := Infohash{}
 				result.Infohash = ID(infohash).String()
 				result.IP = msg.Addr.IP
 				result.Port = port
